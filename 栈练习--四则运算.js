@@ -41,17 +41,15 @@ function getPostfix(infix) {
 	}
 	return postfix;
 }
-console.log(getPostfix(str));
+// console.log(getPostfix(str));
 // 通过后缀表达式计算
 function calc(postFix) {
 	let stack = [];
 	for (let i = 0; i < postFix.length; i++) {
 		const item = postFix[i];
-		// 改进类型检查
 		if (typeof item === 'number' || !isNaN(Number(item))) {
 			// 确保item是数字
 			stack.push(Number(item)); // 显式转换为数字
-			console.log(stack);
 		} else {
 			// 防止空栈操作
 			if (stack.length < 2) {
@@ -60,7 +58,6 @@ function calc(postFix) {
 			let b = stack.pop(); // 第一个操作数
 			let a = stack.pop(); // 第二个操作数
 			let result;
-			console.log(`${a}${item}${b}`);
 			switch (item) {
 				case '+':
 					result = a + b;
@@ -81,6 +78,10 @@ function calc(postFix) {
 			stack.push(result);
 		}
 	}
-	console.log(stack.pop()); // 输出最终结果
+  return stack.pop()
 }
-calc(getPostfix(str));
+let postFix = getPostfix(str)
+let result = calc(postFix);
+console.log(`运算内容：${str}`);
+console.log(`运算结果：${result}`);
+
