@@ -54,7 +54,7 @@ function getPostfix(str) {
     while (stack.length) {
         const top = stack.pop();
         if (top === '(') {
-            throw new Error('Mismatched parentheses');
+            throw new Error('括号输入异常');
         }
         postfix.push(top);
     }
@@ -142,7 +142,7 @@ function calc(postFix) {
 					break;
 				case '/':
 					if (b === 0) {
-						throw new Error('Division by zero');
+						throw new Error('除数不能为0');
 					}
 					result = a / b;
 					break;
