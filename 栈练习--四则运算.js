@@ -153,9 +153,7 @@ function calc(postFix) {
   return stack.pop()
 }
 let postFix = getPostfix(str)
-console.log(postFix);
 let postFix2 = getPostfix2(str)
-console.log(postFix2);
 
 let result = calc(postFix);
 let result2 = calc(postFix2);
