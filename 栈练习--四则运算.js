@@ -77,8 +77,6 @@ function getPostfix2(str) {
     } else {
       // 非数字字符处理
       if (numBuffer) {
-        console.log(numBuffer);
-        
         // 如果之前有数字字符，先将它们作为一个整体加入后缀表达式
         postfix.push(numBuffer);
         numBuffer = '';
@@ -116,7 +114,6 @@ function getPostfix2(str) {
 	}
 	return postfix;
 }
-// console.log(getPostfix(str));
 // 通过后缀表达式计算
 function calc(postFix) {
 	let stack = [];
